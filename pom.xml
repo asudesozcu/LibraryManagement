@@ -7,14 +7,16 @@
 		<version>2.6.4</version>
 		<relativePath />
 	</parent>
-	<groupId>com.quickstartdev</groupId>
+	<groupId>com.knf.dev</groupId>
 	<artifactId>librarymanagementsystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>librarymanagementsystem</name>
-	<description>Library management system </description>
+	<description>Library Management System</description>
 
 	<properties>
 		<java.version>17</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencies>
@@ -82,6 +84,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+				<configuration>
+					<includes>
+						<include>**/*Test.java</include>
+					</includes>
+					<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

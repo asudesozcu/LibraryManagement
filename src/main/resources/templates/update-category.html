@@ -19,19 +19,16 @@
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-10">
-					<form action="#"
-						th:action="@{/update-category/{id}(id=${category.id})}"
-						th:object="${category}" method="post">
+					<form th:action="@{/update-category/{id}(id=${category.id})}" method="post">
 						<div class="row">
 
 							<div class="form-group col-md-8">
 								<label for="name" class="col-form-label">Category Name</label> <input
-									type="text" th:field="*{name}" class="form-control" id="name"
-									placeholder="Category Name" />
+									type="text" id="name" name="name" th:value="${category.name}" class="form-control" required>
 							</div>
 
 							<div class="col-md-6">
-								<input type="submit" class="btn btn-success" value=" Submit ">
+								<button type="submit" class="btn btn-success">Update Category</button>
 							</div>
 
 						</div>

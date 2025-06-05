@@ -35,17 +35,16 @@
     <div class="card">
         <div class="card-body">
             <div class="col-md-10">
-                <form action="#" th:action="@{/add-category}" th:object="${category}" method="post"
-                      onsubmit="return validateForm()">
+                <form th:action="@{/add-category}" method="post">
                     <div class="row">
                         <div class="form-group col-md-8">
                             <label for="name" class="col-form-label">Category Name</label>
-                            <input type="text" th:field="*{name}" class="form-control" id="name"
+                            <input type="text" id="name" name="name" class="form-control" required
                                    placeholder="Category Name"/>
                             <span></span>
                         </div>
                         <div class="col-md-6">
-                            <input type="submit" class="btn btn-success" value=" Submit ">
+                            <button type="submit" class="btn btn-success">Add Category</button>
                         </div>
                     </div>
                 </form>
